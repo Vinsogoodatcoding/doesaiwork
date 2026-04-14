@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x;
+let y;
+let speedX;
+let speedY;
 
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  
+  // start circle in the middle
+  x = width / 2;
+  y = height / 2;
+  
+  // random starting speed
+  speedX = random(-5, 5);
+  speedY = random(-5, 5);
+}
+
+function draw() {
+  background(220);
+  
+  // move the circle randomly
+  speedX = random(-5, 5);
+  speedY = random(-5, 5);
+  
+  x += speedX;
+  y += speedY;
+  
+  // if circle leaves the screen, send it back to the middle
+  if (x < 0 || x > width || y < 0 || y > height) {
+    x = width / 2;
+    y = height / 2;
+  }
+  
+  // draw the circle
+  fill("red");
+  circle(x, y, 50);
+}
+    </script>
+</body>
+</html>
